@@ -17,6 +17,52 @@ namespace CBB.Bankomat.Models
     }
 
 
+    public interface IDeposit
+    {
+        void Deposit(decimal amount);
+    }
+
+    public interface IWidthraw
+    {
+        void Widthraw(decimal amount);
+    }
+
+    public interface ISaldo
+    {
+        decimal GetSaldo();
+    }
+
+    public interface IAuthorize
+    {
+        bool Login(string pincode);
+    }
+
+
+    public class MyATM : IWidthraw, ISaldo, IAuthorize, IDeposit
+    {
+        private decimal saldo;
+
+        public void Deposit(decimal amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public decimal GetSaldo()
+        {
+            return saldo;
+        }
+
+        public bool Login(string pincode)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Widthraw(decimal amount)
+        {
+            saldo -= amount;
+        }
+    }
+
     public interface IPrinter
     {
         void Print(string message);

@@ -14,6 +14,17 @@ namespace CBB.Bankomat
             Scenario1Test();
         }
 
+
+        private static void Scenario2Test()
+        {
+            IDeposit atm = new MyATM();
+
+            atm.Deposit(1000);
+
+            atm.Deposit(2000);
+            
+        }
+
         private static void Scenario1Test()
         {
 
